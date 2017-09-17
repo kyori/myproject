@@ -57,8 +57,9 @@ void remove_node(Node** head, Node* remove)
 	}
 	else
 	{
-		Node* current = (*head);
-		
+		Node* current = remove;
+		// to-do
+
 	}
 }
 
