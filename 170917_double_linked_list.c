@@ -7,6 +7,7 @@
 // 노드 삭제  (remove_node)
 // 노드 파괴? (delete_node)
 // get_node
+// print_node : ok
 
 typedef struct Node
 {
@@ -42,8 +43,28 @@ void append_node(Node** head, Node* newNode)
 		}
 
 		tail->next = newNode;
-		newNode->prev = tail;      
+		newNode->prev = tail;
 	}
+}
+
+void remove_node(Node** head, Node* remove)
+{
+	if ((*head) == remove)
+	{
+		(*head) = remove->next;
+		remove->next->prev = NULL;
+		remove->next = NULL;
+	}
+	else
+	{
+		Node* current = (*head);
+		
+	}
+}
+
+void delete_node(Node* node)
+{
+	free(node);
 }
 
 void print_node(Node* head)
@@ -68,6 +89,7 @@ int main()
 	append_node(&head, next_node);
 	append_node(&head, create_node(225));
 
+	
 	print_node(head);
 	return 0;
 }
